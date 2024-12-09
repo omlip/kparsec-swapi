@@ -1,0 +1,8 @@
+### People by id
+GET https://swapi.dev/api/people/1
+
+### People search
+GET https://swapi.dev/api/people/?search=yoda
+
+### All people
+GET https://swapi.dev/api/people

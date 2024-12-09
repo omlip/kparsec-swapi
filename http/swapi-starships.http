@@ -1,0 +1,8 @@
+### Starships by id
+GET https://swapi.dev/api/starships/2
+
+### All starships
+GET https://swapi.dev/api/starships
+
+### Search on starships by name or model
+GET https://swapi.dev/api/starships?search=GR-75

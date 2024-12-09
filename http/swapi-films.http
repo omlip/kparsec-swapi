@@ -1,0 +1,11 @@
+### All Films
+GET https://swapi.dev/api/films
+
+### Film by id
+GET https://swapi.dev/api/films/4
+
+### Films search
+GET https://swapi.dev/api/films/?search=hope
+
+###
+GET https://swapi.dev/api/films?search=A New Hope

@@ -1,0 +1,53 @@
+name: Build and Test KParsec SWAPI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up JDK
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      # Cache Gradle dependencies
+      - name: Cache Gradle Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # Build the project
+      - name: Build Project
+        run: ./gradlew build
+
+      # Run tests
+      - name: Run Tests
+        run: ./gradlew test
+
+      # Package the JAR
+      - name: Package JAR
+        run: ./gradlew jar
+
+      # Upload build artifacts (optional)
+      - name: Upload JAR
+        uses: actions/upload-artifact@v3
+        with:
+          name: kotlin-application-jar
+          path: build/libs/*.jar
