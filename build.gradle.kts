@@ -1,14 +1,15 @@
 plugins {
-    kotlin("jvm") version "2.1.0"
-    kotlin("plugin.serialization") version "2.0.0"
-    id("io.ktor.plugin") version "2.3.13"
+    kotlin("jvm") version "2.2.0"
+    kotlin("plugin.serialization") version "2.1.21"
+    //id("io.ktor.plugin") version "3.2.3"
 }
 
 group = "be.olan"
 version = "1.0-SNAPSHOT"
 
-val logback_version: String by project
-val kotlinx_datetime_version: String by project
+val logbackVersion: String by project
+val kotlinxDatetimeVersion: String by project
+val ktorVersion: String by project
 
 repositories {
     mavenCentral()
@@ -17,16 +18,16 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
-    implementation("io.ktor:ktor-client-core")
-    implementation("io.ktor:ktor-client-cio")
-    implementation("io.ktor:ktor-client-content-negotiation")
-    implementation("io.ktor:ktor-serialization-kotlinx-json")
-    implementation("io.ktor:ktor-client-logging")
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-client-cio:$ktorVersion")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.ktor:ktor-client-logging:$ktorVersion")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:$kotlinx_datetime_version")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:$kotlinxDatetimeVersion")
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
-    testImplementation("io.ktor:ktor-client-mock")
+    testImplementation("io.ktor:ktor-client-mock:$ktorVersion")
 
 }
 
@@ -34,5 +35,8 @@ tasks.test {
     useJUnitPlatform()
 }
 kotlin {
+    sourceSets.all {
+        languageSettings.optIn("kotlin.time.ExperimentalTime")
+    }
     jvmToolchain(21)
 }

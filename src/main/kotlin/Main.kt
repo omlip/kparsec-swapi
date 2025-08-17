@@ -1,11 +1,14 @@
+import io.kparsec.client.SwapiClient
+
+
 suspend fun main() {
 
     val client = SwapiClient()
 
     /*
-    val config = SwapiClientConfig()
+    val config = io.kparsec.client.SwapiClientConfig()
     config.retry = 4
-    val client3 = SwapiClient(config)
+    val client3 = io.kparsec.client.SwapiClient(config)
 
     client3.getPerson(6)?.let {
         println("Name: ${it.name}, Birth Year: ${it.birthYear}")
@@ -24,12 +27,7 @@ suspend fun main() {
     // Fetch a person
 
     client.getPeople(1)?.let {
-        println("Name: ${it.name}, Birth Year: ${it.birthYear}")
-    }
-
-
-    client.getPeople(1)?.let {
-        println("Name: ${it.name}, Birth Year: ${it.birthYear}")
+        println("Name: ${it.name}, Birth Year: ${it.birthYear} ,,,,,, created date ${it.created}")
     }
 
     /*
@@ -38,29 +36,22 @@ suspend fun main() {
     }
 
     println(searchPeople.results.map { "${it.name} - ${it.birthYear}" })
+*/
 
-     */
 
-
-    // Fetch a Planet
+    // Fetch a io.kparsec.client.models.Planet
     client.getPlanet(1)?.let {
-        println("Planet: ${it.name}, Rotation Period: ${it.rotationPeriod}")
+        println("io.kparsec.client.models.Planet: ${it.name}, Rotation Period: ${it.rotationPeriod}")
     }
-
-    // Fetch a cached planet
-    client.getPlanet(1)?.let {
-        println("Planet: ${it.name}, Rotation Period: ${it.rotationPeriod}")
-    }
-
 
     client.getStarship(9)?.let {
-        println("Starship: ${it.name}, Hyperdrive Rating: ${it.hyperdriveRating}")
+        println("io.kparsec.client.models.Starship: ${it.name}, Hyperdrive Rating: ${it.hyperdriveRating}")
 
     }
 
     // Fetch a vehicle
     client.getVehicle(4)?.let {
-        println("Vehicle: ${it.name}")
+        println("io.kparsec.client.models.Vehicle: ${it.name}")
     }
 
     // Fetch a species
@@ -69,13 +60,13 @@ suspend fun main() {
     }
 
     // Fetch a film
-    /*
+
     client.getFilm(1)?.let {
-        println("Film: ${it.title}")
+        println("io.kparsec.client.models.Film: ${it.title}")
     }
 
 
-
+/*
     val search = client.films {
         title matching "revenge"
     }
@@ -83,7 +74,6 @@ suspend fun main() {
     println(search.results.map { "${it.title} by ${it.producer}" })
 
 
-
-     */
+ */
 
 }

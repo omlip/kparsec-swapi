@@ -1,11 +1,12 @@
-import kotlinx.datetime.Instant
-import kotlinx.datetime.serializers.InstantIso8601Serializer
+package io.kparsec.client.models
+
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlinx.datetime.Instant
 
 abstract class SwapiItem {
-    @Serializable(with = InstantIso8601Serializer::class) abstract val created: Instant
-    @Serializable(with = InstantIso8601Serializer::class) abstract val edited: Instant
+    abstract val created: Instant
+    abstract val edited: Instant
     abstract val url: String
 }
 
@@ -26,7 +27,7 @@ data class People(
     override val created: Instant,
     override val edited: Instant,
     override val url: String
-): SwapiItem()
+) : SwapiItem()
 
 @Serializable
 data class Planet(
@@ -42,7 +43,7 @@ data class Planet(
     override val created: Instant,
     override val edited: Instant,
     override val url: String
-): SwapiItem()
+) : SwapiItem()
 
 @Serializable
 data class Starship(
@@ -64,7 +65,7 @@ data class Starship(
     override val created: Instant,
     override val edited: Instant,
     override val url: String
-): SwapiItem()
+) : SwapiItem()
 
 @Serializable
 data class Vehicle(
@@ -84,7 +85,7 @@ data class Vehicle(
     override val created: Instant,
     override val edited: Instant,
     override val url: String
-): SwapiItem()
+) : SwapiItem()
 
 @Serializable
 data class Film(
@@ -97,7 +98,7 @@ data class Film(
     override val created: Instant,
     override val edited: Instant,
     override val url: String
-): SwapiItem()
+) : SwapiItem()
 
 @Serializable
 data class Specie(
@@ -116,7 +117,7 @@ data class Specie(
     override val created: Instant,
     override val edited: Instant,
     override val url: String
-): SwapiItem()
+) : SwapiItem()
 
 @Serializable
 data class SearchResponse<T : SwapiItem>(

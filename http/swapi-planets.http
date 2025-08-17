@@ -1,5 +1,5 @@
 ### Planets by id
-GET https://swapi.dev/api/planets/4
+GET {{url}}/api/planets/4
 
 ### All planet
-GET https://swapi.dev/api/planets
+GET {{url}}/api/planets

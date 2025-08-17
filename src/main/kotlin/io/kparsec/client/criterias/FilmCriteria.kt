@@ -1,3 +1,5 @@
+package io.kparsec.client.criterias
+
 class FilmCriteria {
 
     var title: String = ""

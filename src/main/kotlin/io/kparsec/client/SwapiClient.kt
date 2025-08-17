@@ -1,3 +1,17 @@
+package io.kparsec.client
+
+import io.kparsec.client.models.Film
+import io.kparsec.client.criterias.FilmCriteria
+import io.kparsec.client.models.People
+import io.kparsec.client.criterias.PeopleCriteria
+import io.kparsec.client.models.Planet
+import io.kparsec.client.criterias.PlanetCriteria
+import io.kparsec.client.models.SearchResponse
+import io.kparsec.client.models.Specie
+import io.kparsec.client.criterias.SpecieCriteria
+import io.kparsec.client.models.Starship
+import io.kparsec.client.models.Vehicle
+import io.kparsec.client.criterias.VehicleCriteria
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.HttpClientEngine
@@ -71,7 +85,7 @@ class SwapiClient(private val config: SwapiClientConfig) {
         val criteria = FilmCriteria()
         criteria.apply(block)
 
-        return client.get("/api/films/") {
+        return client.get("/api/films") {
             parameter("search", criteria.title)
         }.body<SearchResponse<Film>>()
     }
@@ -138,7 +152,7 @@ class SwapiClientConfig {
     var timeout: Long = 30000
     var debug: Boolean = false
     var engine: HttpClientEngine = CIO.create()
-    var apiUrl: String = "swapi.dev"
+    var apiUrl: String = "swapi.tech"
 }
 
 class GalaxyException(message: String? = "Something went wrong in the Force", cause: Throwable? = null) : RuntimeException(message, cause)

@@ -1,4 +1,4 @@
-import SwapiClient.Companion.swapiClient
+import io.kparsec.client.SwapiClient.Companion.swapiClient
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.client.engine.mock.respondError

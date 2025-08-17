@@ -1,3 +1,5 @@
+package io.kparsec.client.criterias
+
 class SpecieCriteria {
     lateinit var name: String
 

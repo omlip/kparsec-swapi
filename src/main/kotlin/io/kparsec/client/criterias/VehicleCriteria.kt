@@ -1,3 +1,5 @@
+package io.kparsec.client.criterias
+
 class VehicleCriteria {
     lateinit var nameOrModel: String
 

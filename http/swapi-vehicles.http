@@ -1,5 +1,5 @@
 ### Vehicles by id
-GET https://swapi.dev/api/vehicles/4
+GET {{url}}/api/vehicles/4
 
 ### Search on vehicles by name or model
-GET https://swapi.dev/api/vehicles?search=landspeeder
+GET {{url}}/api/vehicles?search=landspeeder

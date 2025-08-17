@@ -1,3 +1,5 @@
+package io.kparsec.client.criterias
+
 class PeopleCriteria {
 
     var name: String = ""

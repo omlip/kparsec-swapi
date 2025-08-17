@@ -1,8 +1,8 @@
 ### Species by id
-GET https://swapi.dev/api/species/6
+GET {{url}}/api/species/6
 
 ### All species
-GET https://swapi.dev/api/species
+GET {{url}}/api/species
 
 ### Search on species by name
-GET https://swapi.dev/api/species?search=human
+GET {{url}}/api/species?search=human
