@@ -1,7 +1,7 @@
+![Build Status](https://github.com/omlip/kparsec-swapi/actions/workflows/ci.yml/badge.svg)
+
 ![Build](https://img.shields.io/github/actions/workflow/status/omlip/kparsec-swapi/ci.yml?branch=main)
 ![Kotlin](https://img.shields.io/badge/kotlin-2.2.0-blue.svg?logo=kotlin)
-![License](https://img.shields.io/github/license/<OWNER>/<REPO>)
-![GitHub stars](https://img.shields.io/github/stars/<OWNER>/<REPO>?style=social)
 
 # 🌌 KParsec-SWAPI Client
 
