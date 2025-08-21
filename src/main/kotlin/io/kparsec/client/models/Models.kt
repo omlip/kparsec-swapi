@@ -1,8 +1,8 @@
 package io.kparsec.client.models
 
+import kotlinx.datetime.Instant
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.datetime.Instant
 
 abstract class SwapiItem {
     abstract val created: Instant
